@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Card</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style1.css" />
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('galaxy.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+        }
+        #message {
+            font-size: 1em;
+            font-weight: bold;
+            line-height: 1em;
+        }
+        .char {
+            color: #000000; /* Đổi màu chữ thành trắng */
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="outside">
+          <div class="front">
+            <p></p>
+           <p style="font-family: 'Arial', sans-serif;">Gửi Khánh Băng</p>
+            <div class="cake">
+              <div class="top-layer"></div>
+              <div class="middle-layer"></div>
+              <div class="bottom-layer"></div>
+              <div class="candle"></div>
+            </div>
+          </div>
+          <div class="back"></div>
+        </div>
+        <div class="inside">
+          <div id="message"></div>
+
+    <script>
+        const text = `
+        Gửi Khánh Băng (Vợ iu Cha Eun Woo)
+                        🌹🌹🌹
+        Chúc cậu mỗi ngày đều là một ngày tràn đầy niềm vui, hạnh phúc và những khoảnh khắc đáng nhớ. 
+        Cậu giống như một bông hoa xinh đẹp giữa đời, tỏa sắc hương dịu dàng khiến ai ở gần cũng thấy nhẹ nhàng, thư thái. 
+        Hãy luôn giữ vững nụ cười thật tươi trên môi, bởi nó không chỉ là điểm nhấn xinh đẹp mà còn là nguồn năng lượng tích cực cho mọi người xung quanh.
+        Chúc cậu luôn khỏe mạnh, tràn đầy năng lượng, thành công trong học tập, công việc và cả những điều nhỏ bé mà cậu trân quý. 
+        Hãy luôn tự tin và hạnh phúc nhé!
+        `;
+
+        const messageElement = document.getElementById('message');
+        let index = 0;
+
+        function typeEffect() {
+            if (index < text.length) {
+                const char = text[index];
+
+                if (char === '\n') {
+                    const br = document.createElement('br');
+                    messageElement.appendChild(br);
+                } else {
+                    const span = document.createElement('span');
+                    span.textContent = char;
+                    span.className = 'char';
+                    messageElement.appendChild(span);
+                }
+
+                index++;
+                setTimeout(typeEffect, 50);
+            }
+        }
+
+        typeEffect();
+
+    </script>
+          <h1>&#127873;</h1>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
